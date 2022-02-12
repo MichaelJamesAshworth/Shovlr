@@ -1,5 +1,5 @@
 INSERT INTO
-snow_removers(name, email, password)
+snow_removers(name, password)
 VALUES
   ('Alex', 'password'),
   ('Bruce', 'password'),
