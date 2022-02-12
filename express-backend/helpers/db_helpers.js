@@ -1,6 +1,6 @@
 module.exports = (db) => {
 
-  //get all users from users table
+  //get all users
   const getUsers = () => {
 
     const query = {
