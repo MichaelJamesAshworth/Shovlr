@@ -1,17 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+
 module.exports = (dbHelpers) => {
 
   router.get('/', (req, res) => {
-    dbHelpers.getSnowRemovers()
-      .then(snow_removers => res.json(snow_removers))
+    dbHelpers.getRequests()
+      .then(requests => res.json(requests))
       .catch(err => res.json({error: err.message}));
   })
 
   router.get('/:id', (req, res) => {
-    dbHelpers.getRemover(req.params.id)
-      .then(snow_remover => res.json(snow_remover))
+    dbHelpers.getRequestByUserId(req.params.id)
+      .then(request => res.json(request))
       .catch(err => res.json({error: err.message}));
   })
 
