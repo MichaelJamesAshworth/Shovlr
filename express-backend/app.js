@@ -23,11 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({ origin: true, credentials: true }));
 
-app.use('/', indexRouter);
-app.use('/api/users', usersRouter(dbHelpers));
-app.use('/api/snow_removers', removersRouter(dbHelpers));
-app.use('/api/addresses', addressesRouter(dbHelpers));
-app.use('/api/removal_requests', requestsRouter(dbHelpers));
+app.use("/", indexRouter);
+app.use("/api/users", usersRouter(dbHelpers));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
