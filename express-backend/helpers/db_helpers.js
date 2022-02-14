@@ -62,8 +62,6 @@ module.exports = (db) => {
   
 
 
-
-
   //---------------------------addresses-------------------------------
 
   //get all addresses
