@@ -125,6 +125,21 @@ module.exports = (db) => {
       .catch(err => err)
   }
 
+  //takes in request object and adds to request table
+  const addRequest = (request) => {
+
+    const query = {
+      text: 'INSERT INTO removal_requests (created_at, started_at, completed_at, users_email, total_cents, size, note, user_id, snow_remover_id, address_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;',
+      values: [request.created_at, request.started_at, request.completed_at, request.users_email, request.total_cents, request.size, request.note, request.user_id, request.snow_remover_id, request.address_id]
+    }
+
+    return db
+      .query(query)
+      .then(results => results.rows)
+      .catch(err => err)
+  }
+
+
 
 
 
@@ -136,7 +151,8 @@ module.exports = (db) => {
     getAddresses,
     getAddressByUserId,
     getRequests,
-    getRequestByUserId
+    getRequestByUserId,
+    addRequest
   }
 
 }
