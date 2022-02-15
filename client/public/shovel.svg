@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 423.74 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="j">
+   <stop stop-color="#0a7600" offset="0"/>
+   <stop stop-color="#149900" offset="1"/>
+  </linearGradient>
+  <linearGradient id="i">
+   <stop stop-color="#9a7427" offset="0"/>
+   <stop stop-color="#c93" offset="1"/>
+  </linearGradient>
+  <linearGradient id="k" x1="1209.7" x2="1202.6" y1="636.05" y2="631.97" gradientUnits="userSpaceOnUse" xlink:href="#i"/>
+  <linearGradient id="l" x1="1279.1" x2="1271.6" y1="515.59" y2="511.24" gradientUnits="userSpaceOnUse" xlink:href="#j"/>
+  <linearGradient id="m" x1="1204.8" x2="1050.3" y1="793.07" y2="721.92" gradientUnits="userSpaceOnUse" xlink:href="#j"/>
+  <linearGradient id="n" x1="1142.9" x2="1116.1" y1="708.43" y2="807.72" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#073e01" stop-opacity="0" offset="0"/>
+   <stop stop-color="#063d00" offset=".53299"/>
+   <stop stop-color="#093e03" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="o" x1="1311.5" x2="1285.9" y1="474.32" y2="466.19" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#a7a7a7" offset="0"/>
+   <stop stop-color="#ccc" offset="1"/>
+  </linearGradient>
+  <linearGradient id="p" x1="1336.7" x2="1284.1" y1="450.88" y2="444.58" gradientUnits="userSpaceOnUse" xlink:href="#i"/>
+ </defs>
+ <g transform="translate(-985.95 -360.03)">
+  <g transform="matrix(1.1882 0 0 1.1882 -185.6 -161.85)">
+   <path d="m1218.4 729.99 8.1675 1.268c8.1471 1.2649 20.634 19.835 21.319 35.164 1.9922 44.59-24.275 70.944-41.774 78.408l-2.6516-107.13z" stroke="#000" stroke-width="3"/>
+   <path d="m1285.4 482.31-135.71 238.21 14.643 1.0714 131.79-232.5z" fill="url(#k)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1285.4 482.31 10.714 6.7857-24.745 43.655-10.978-6.5443z" fill="url(#l)" stroke="#000" stroke-width="1px"/>
+   <path d="m1173.7 678.46 12.671 4.3357-21.995 38.804 62.238 9.6628c35.793 35.571 14.126 95.791-24.749 110.99 0 0-136.12-58.589-131.82-54.296 4.2931 4.2931-32.072-7.5762-32.072-7.5762 22.644-42.126 13.067-62.343 2.778-82.075l110.44 19.678z" fill="url(#m)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1164.3 721.6 62.238 9.6628c35.793 35.571 14.126 95.791-24.749 110.99 0 0-136.12-58.589-131.82-54.296 4.2931 4.2931-32.072-7.5762-32.072-7.5762 22.644-42.126 13.067-62.343 2.778-82.075l110.44 19.678z" fill="url(#n)"/>
+   <path d="m1049.5 762.95c66.908-21.991 113.7-27.346 110.86 8.3338 17.001 10.702 38.149 17.645 34.598 46.972 42.503 9.3246 15.51 71.66-92.176 19.951-36.329 4.3117-46.61-9.8845-58.084-23.234-17.686-0.13059-35.04-0.67068-38.891-17.93-22.158-9.9906-20.433-23.393-14.647-37.376 11.598-14.56 47.974-24.637 58.336 3.283z" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1049.5 762.95c66.908-21.991 113.7-27.346 110.86 8.3338 17.001 10.702 38.149 17.645 34.598 46.972 14.802-0.44727 25.638 20.19 14.473 28.904-1.6401-5.8659-10.75-15.906-26.797-24.395 0.029-33.207-18.308-37.463-30.936-42.449-6.2349-27.046-43.62-31.503-103.97-12.315-4.9339-12.452-29.106-16.077-56.569-8.3338 11.598-14.56 47.974-24.637 58.336 3.283z" fill="#9ff"/>
+   <path d="m1285.4 482.31 0.8929-30.893 7.5-0.17857-0.7143 26.786 32.143-27.321 11.429 0.17857-40.86 38.009z" fill="url(#o)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1288.6 440.7h47.411c7.2167 2.331 6.4268 11.389-0.7143 13.393l-46.696 0.17857c-7.7309-3.4025-5.5228-12.622 0-13.571z" fill="url(#p)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1049.5 762.95c66.908-21.991 113.7-27.346 110.86 8.3338 17.001 10.702 38.149 17.645 34.598 46.972 42.503 9.3246 15.51 71.66-92.176 19.951-36.329 4.3117-46.61-9.8845-58.084-23.234-17.686-0.13059-35.04-0.67068-38.891-17.93-22.158-9.9906-20.433-23.393-14.647-37.376 11.598-14.56 47.974-24.637 58.336 3.283z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+   <path d="m1164.3 721.6 131.79-232.5-10.714-6.7857-134.26 235.67" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+ </g>
+</svg>
