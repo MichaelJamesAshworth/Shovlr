@@ -92,6 +92,20 @@ module.exports = (db) => {
       .catch(err => err)
   }
 
+  //add new address
+  const addAddress = (address) => {
+
+    const query = {
+      text: 'INSERT INTO addresses (title, lat, lng, user_id) VALUES ($1, $2, $3, $4) RETURNING *;',
+      values: [address.title, address.lat, address.lng, address.user_id]
+    }
+
+    return db
+      .query(query)
+      .then(results => results.rows)
+      .catch(err => err)
+  }
+
 
 
   //---------------------------removal requests-------------------------------
@@ -135,7 +149,7 @@ module.exports = (db) => {
 
     return db
       .query(query)
-      .then(results => results.rows)
+      .then(result => result.rows)
       .catch(err => err)
   }
 
@@ -152,7 +166,8 @@ module.exports = (db) => {
     getAddressByUserId,
     getRequests,
     getRequestByUserId,
-    addRequest
+    addRequest,
+    addAddress
   }
 
 }

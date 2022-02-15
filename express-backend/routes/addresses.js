@@ -16,5 +16,11 @@ module.exports = (dbHelpers) => {
       .catch(err => res.json({error: err.message}));
   })
 
+  router.post('/', (req, res) => {
+    dbHelpers.addAddress({...req.body})
+      .then(request => res.send(request))
+      .catch(err => res.json({error: err.message}));
+  })
+
   return router
 }
