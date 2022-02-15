@@ -1,44 +1,56 @@
-import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
+import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
+import { useEffect, useState } from 'react';
+const totalPrice = 5000
 
 const CheckoutForm = () => {
+
+  const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
+  useEffect(() => {
+    fetch("/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price: totalPrice }),
+      })
+        .then(res => res.json())
+        .then((data) => {
+          setClientSecret(data.clientSecret);  // <-- setting the client secret here
+        });
+  }, []);
 
-  const handleSubmit = async (event) => {
-    // We don't want to let default form submission happen here,
-    // which would refresh the page.
+  // STEP 2: make the payment after filling the form properly
+  const makePayment = async (event) => {
     event.preventDefault();
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+     payment_method: {
+       card: elements.getElement(CardElement),
+     },
+   });
+   
+   if (payload.error) {
+     console.log(payload.error.message);
+   }
 
-    if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
-      // Make sure to disable form submission until Stripe.js has loaded.
-      return;
-    }
+   else {
+     console.log('Success!')
+   }
+ }
 
-    const result = await stripe.confirmPayment({
-      //`Elements` instance that was used to create the Payment Element
-      elements,
-      confirmParams: {
-        return_url: "https://my-site.com/order/123/complete",
-      },
-    });
-
-    if (result.error) {
-      // Show error to your customer (for example, payment details incomplete)
-      console.log(result.error.message);
-    } else {
-      // Your customer will be redirected to your `return_url`. For some payment
-      // methods like iDEAL, your customer will be redirected to an intermediate
-      // site first to authorize the payment, then redirected to the `return_url`.
-    }
-  };
+ const handleChange = async (event) => {
+  // Listen for changes in the CardElement
+  // and display any errors as the customer types their card details
+  console.log(event);
+};
 
   return (
-    <form onSubmit={handleSubmit}>
-      <PaymentElement />
-      <button disabled={!stripe}>Submit</button>
+    <form id="payment-form" onSubmit={makePayment}>
+      <CardElement id="card-element" onChange={handleChange} />
+      <button id="submit"> Pay Now </button>
     </form>
-  )
+  );
 };
 
 export default CheckoutForm;
