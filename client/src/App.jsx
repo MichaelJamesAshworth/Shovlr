@@ -1,4 +1,6 @@
+
 import './App.css';
+import Nav from './components/Nav';
 import CheckoutForm from './components/CheckoutForm';
 //Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
@@ -70,6 +72,7 @@ function App() {
 
   return (
     <>
+      <Nav />
       <h1 className="brand">Shovlr</h1>
 
       <Search panTo={panTo} locationSelector={(location) => {
