@@ -1,5 +1,6 @@
 import './App.css';
 import CheckoutForm from './components/CheckoutForm';
+import Nav from './components/Nav';
 //Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
@@ -20,7 +21,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 function App() {
   return (
     <div className='App'>
-      <h1>Shovlr</h1>
+      <Nav />
       <Router>
         <nav>
           <Link to="/">Home</Link>
