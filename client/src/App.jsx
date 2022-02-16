@@ -76,7 +76,6 @@ function App() {
         setLocation(location)
         setMarkers([{...location, time: new Date()}])
         }} />
-      {/* <Locate panTo={panTo} /> */}
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle} 
@@ -97,10 +96,11 @@ function App() {
           }}
         />)}
       </GoogleMap>
-      {/* <button onClick={onSubmit}>Submit</button> */}
     </>
   );
 };
+
+{/* <button onClick={onSubmit}>Submit</button> */}
 
 /*
 Sample code to test that front-end and back-end is communicating properly:
