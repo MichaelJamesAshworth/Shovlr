@@ -38,13 +38,18 @@ function App() {
   });
 
   const [markers, setMarkers] = useState([]);
+  const [location, setLocation] = useState();
 
   const onMapClick = React.useCallback((event) => {
-    setMarkers(current => [...current, {
+    setLocation({
       lat: event.latLng.lat(),
-      lng: event.latLng.lng(),
-      time: new Date()
-    }])
+      lng: event.latLng.lng()
+    });
+    // setMarkers(() => [, {
+    //   lat: event.latLng.lat(),
+    //   lng: event.latLng.lng(),
+    //   time: new Date()
+    // }])
   }, []);
   
   const mapRef = new React.useRef();
@@ -61,12 +66,17 @@ function App() {
   if (!isLoaded) return "Loading maps";
   // -------MAP STUFF------- //
 
+  console.log(location)
+
   return (
     <>
       <h1 className="brand">Shovlr</h1>
 
-      <Search panTo={panTo} />
-      <Locate panTo={panTo} />
+      <Search panTo={panTo} locationSelector={(location) => {
+        setLocation(location)
+        setMarkers([{...location, time: new Date()}])
+        }} />
+      {/* <Locate panTo={panTo} /> */}
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle} 
@@ -76,8 +86,8 @@ function App() {
         onClick={onMapClick}
         onLoad={onMapLoad}
       >
-        {markers.map(marker => <Marker 
-          key={marker.time.toISOString()} 
+        {location && [location].map(marker => <Marker
+          key={new Date().toISOString()} 
           position={{ lat: marker.lat, lng: marker.lng }}
           icon={{
             url: '/snowflake.svg',

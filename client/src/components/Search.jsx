@@ -11,7 +11,7 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css"
 
-const Search = ({panTo}) => {
+const Search = ({panTo, locationSelector}) => {
   const {
     ready,
     value,
@@ -41,6 +41,7 @@ return (
       console.log(results[0].formatted_address);
       // pan to lat lng on map after selecting option in dropdown
       panTo({lat, lng});
+      locationSelector({lat, lng});
     } catch(error) {
       console.log("error!");
     }
