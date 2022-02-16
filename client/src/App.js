@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import Account from './pages/Account';
+import PastRequests from './pages/PastRequests';
 
 // import axios from 'axios'
 
@@ -30,7 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Checkout" element={<Checkout />} />
-          <Route path="/Account" element={<Account />} />
+          <Route path="/Account/*" element={<Account />} />
+          <Route path="/Account/PastRequests" element={<PastRequests />} />
         </Routes>
       </Router>
     </div>
