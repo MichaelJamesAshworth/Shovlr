@@ -49,7 +49,6 @@
   margin-top: 1em;
 }
 
-<<<<<<< HEAD
 .locate {
   align-content: center;
   margin-bottom: 1em;
@@ -63,12 +62,11 @@
     border-width: 1px;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-=======
+}
 .Account {
   padding-top: 1em;
 }
 
 .PastRequests {
   padding-top: 1em;
->>>>>>> main
 }
