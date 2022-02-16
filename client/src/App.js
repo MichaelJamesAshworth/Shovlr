@@ -1,6 +1,9 @@
 import './App.css';
-import CheckoutForm from './components/CheckoutForm';
-//Stripe related imports
+import './styles/account.css'
+import './styles/pastRequests.css'
+import './styles/search.css'
+
+// Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
@@ -10,7 +13,10 @@ import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import Account from './pages/Account';
 import PastRequests from './pages/PastRequests';
+
+// Import Components
 import Nav from './components/Nav';
+import CheckoutForm from './components/CheckoutForm';
 
 // import axios from 'axios'
 
