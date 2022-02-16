@@ -1,18 +1,29 @@
+import { Link } from 'react-router-dom';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useLocation } from 'react-router-dom'
+
 export default function Nav(props) {
+
+  const location = useLocation();
+  //console.log(location.pathname);
+
+  const renderNavButton = () => {
+    if (location.pathname === '/Account') {
+      return <Link to="/" className='navbar-brand'><FontAwesomeIcon icon={faAngleLeft} /></Link>
+    } else if (location.pathname === '/Account/PastRequests') {
+      return <Link to="/Account" className='navbar-brand'><FontAwesomeIcon icon={faAngleLeft} /></Link>
+    } else {
+      return <Link to="/Account" className='navbar-brand'><FontAwesomeIcon icon={faUser} /></Link>
+    }
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Shovlr</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
-            <a className="nav-link" href="#">Account</a>
-            <a className="nav-link" href="#">About</a>
-          </div>
-        </div>
+          <Link to="/" className='navbar-brand'>Shovlr</Link>
+          {renderNavButton()}
       </div>
     </nav>
   )
