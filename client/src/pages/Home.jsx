@@ -6,6 +6,8 @@ const Home = () => {
 
 export default Home
 
+// import React, { useState } from 'react';
+
 // // -------MAP STUFF------- //
 // import Locate from './components/Locate';
 // import Search from './components/Search';

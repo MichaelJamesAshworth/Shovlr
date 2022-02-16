@@ -3,7 +3,6 @@ import CheckoutForm from './components/CheckoutForm';
 //Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-import React, { useState } from 'react';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 
 // Import Pages
