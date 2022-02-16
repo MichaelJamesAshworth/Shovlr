@@ -9,6 +9,7 @@ const Account = () => {
           <button type="button" className="btn btn-primary">View past requests</button>
         </Link>
       </nav>
+      <p className="foot-text">Shovlr 2022</p>
     </div>
   );
 }
