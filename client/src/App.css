@@ -41,15 +41,6 @@
   --primary-colour: "green"
 }
 
-.brand {
-  width: 100vw;
-  display: grid;
-  place-items: center;
-  color: #281414;
-  margin: 0;
-  padding: 0;
-}
-
 .search {
   width:100vw;
   display: grid;
@@ -58,7 +49,6 @@
   margin-top: 1em;
 }
 
-.locate {
-  align-content: center;
-  margin-bottom: 1em;
+.Account {
+  padding-top: 1em;
 }
