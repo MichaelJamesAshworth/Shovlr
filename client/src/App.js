@@ -23,8 +23,6 @@ function App() {
     <div className='App'>
       <Router>
         <Nav />
-
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Checkout" element={<Checkout />} />

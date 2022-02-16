@@ -53,7 +53,7 @@ const Home = () => {
 
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
-  console.log(location)
+  // console.log(location)
   // -------MAP STUFF------- //
 
   return (

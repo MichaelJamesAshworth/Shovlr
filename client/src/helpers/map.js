@@ -1,15 +1,3 @@
-// Dependencies
-//
-// reach/combobox
-// react-google-maps/api
-// use-places-autocomplete
-
-// images in public
-
-// locate and search components
-
-// map helper (this file)
-
 const libraries = ["places"];
 const mapContainerStyle = {
   width: '100vw',

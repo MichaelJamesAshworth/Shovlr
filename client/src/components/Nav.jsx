@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom'
 export default function Nav(props) {
 
   const location = useLocation();
-  console.log(location.pathname);
+  //console.log(location.pathname);
 
   const renderNavButton = () => {
     if (location.pathname === '/Account') {
