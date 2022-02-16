@@ -124,6 +124,20 @@ module.exports = (db) => {
       .catch(err => err)
   }
 
+  const getCompletedRequestsByUserId = (userId) => {
+
+    const query = {
+      text: 'SELECT * FROM removal_requests WHERE user_id = $1 AND completed_at IS NOT NULL',
+      values: [userId]
+    }
+
+    return db
+      .query(query)
+      .then(result => result.rows)
+      .catch(err => err)
+  }
+  
+
   //get removal request by user id
 
   const getRequestByUserId = (userId) => {
@@ -165,6 +179,7 @@ module.exports = (db) => {
     getAddresses,
     getAddressByUserId,
     getRequests,
+    getCompletedRequestsByUserId,
     getRequestByUserId,
     addRequest,
     addAddress
