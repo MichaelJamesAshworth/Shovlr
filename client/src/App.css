@@ -62,3 +62,13 @@
   align-content: center;
   margin-bottom: 1em;
 }
+
+.form {
+    text-align: left;
+    max-width: 500px;
+    padding: 1.5rem;
+    margin: auto;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}

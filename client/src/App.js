@@ -1,6 +1,6 @@
 import './App.css';
 import CheckoutForm from './components/CheckoutForm';
-import Nav from './components/Nav';
+
 //Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
