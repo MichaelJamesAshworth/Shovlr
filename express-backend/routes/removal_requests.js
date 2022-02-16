@@ -10,6 +10,12 @@ module.exports = (dbHelpers) => {
       .catch(err => res.json({error: err.message}));
   })
 
+  router.get('/completed/:id', (req, res) => {
+    dbHelpers.getCompletedRequestsByUserId(req.params.id)
+      .then(requests => res.json(requests))
+      .catch(err => res.json({error: err.message}));
+  })
+
   router.get('/:id', (req, res) => {
     dbHelpers.getRequestByUserId(req.params.id)
       .then(request => res.json(request))
