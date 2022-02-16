@@ -41,15 +41,6 @@
   --primary-colour: "green"
 }
 
-.brand {
-  width: 100vw;
-  display: grid;
-  place-items: center;
-  color: #281414;
-  margin: 0;
-  padding: 0;
-}
-
 .search {
   width:100vw;
   display: grid;
@@ -58,6 +49,7 @@
   margin-top: 1em;
 }
 
+<<<<<<< HEAD
 .locate {
   align-content: center;
   margin-bottom: 1em;
@@ -71,4 +63,12 @@
     border-width: 1px;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+=======
+.Account {
+  padding-top: 1em;
+}
+
+.PastRequests {
+  padding-top: 1em;
+>>>>>>> main
 }

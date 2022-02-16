@@ -1,13 +1,13 @@
-import PastRequests from './PastRequests';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Account = () => {
   return (
-    <div>
-      <h1>This is the Account page</h1>
-
+    <div className='Account'>
+      <h2>Account</h2>
       <nav>
-        <Link to='PastRequests'>Past Requests</Link>
+        <Link to='PastRequests'>
+          <button type="button" className="btn btn-primary">View past requests</button>
+        </Link>
       </nav>
     </div>
   );
