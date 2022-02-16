@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import Account from './pages/Account';
 import PastRequests from './pages/PastRequests';
+import Nav from './components/Nav';
 
 // import axios from 'axios'
 
