@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Checkout from './pages/Checkout';
 import Account from './pages/Account';
 import PastRequests from './pages/PastRequests';
+import Nav from './components/Nav';
 
 // import axios from 'axios'
 
@@ -20,7 +21,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 function App() {
   return (
     <div className='App'>
-      <h1>Shovlr</h1>
+      <Nav />
       <Router>
         <nav>
           <Link to="/">Home</Link>
