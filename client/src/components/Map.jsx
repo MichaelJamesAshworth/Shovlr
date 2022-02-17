@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import Locate from './components/Locate';
 import Search from '../components/Search';
+import { locationContext } from '../providers/LocationProvider';
 
 import {
   libraries, 
@@ -16,13 +17,17 @@ import {
 } from "@react-google-maps/api";
 
 const Map = () => {
+
+  //location context
+  const { location, setLocation, getInitialLocation } = useContext(locationContext);
+
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
   });
 
   const [markers, setMarkers] = useState([]);
-  const [location, setLocation] = useState();
+  //const [location, setLocation] = useState();
 
   const onMapClick = React.useCallback((event) => {
     setLocation({

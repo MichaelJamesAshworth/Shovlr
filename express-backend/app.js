@@ -15,6 +15,7 @@ const addressesRouter = require('./routes/addresses');
 const requestsRouter = require('./routes/removal_requests');
 
 const app = express();
+app.set('etag', false);
 const server = http.createServer(app);
 
 app.use(logger("dev"));
