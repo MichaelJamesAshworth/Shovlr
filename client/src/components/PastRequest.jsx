@@ -19,6 +19,15 @@ const PastRequest = (props) => {
     return output;
   }
 
+  const calculatePrice = (size) => {
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    const priceInCents = size;
+    return formatter.format(priceInCents/100);
+  }
+
 
   return(
     <>
@@ -30,7 +39,7 @@ const PastRequest = (props) => {
                     <h5 className="card-title">date: {x.date}</h5>
                     <p className="card-text">note: {x.note}</p>
                     <p className="card-text">adress: {x.address}</p>
-                    <p className="card-text">total cost: {x.cost}</p>
+                    <p className="card-text">total cost: {calculatePrice(x.cost)}</p>
                   </div>
               </div>
             )
