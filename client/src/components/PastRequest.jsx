@@ -26,11 +26,11 @@ const PastRequest = (props) => {
           requests && requestHtml().map((x) => {
             return (
               <div className="card">
-                  <div class="card-body">
-                    <h5 class="card-title">date: {x.date}</h5>
-                    <p class="card-text">note: {x.note}</p>
-                    <p class="card-text">adress: {x.address}</p>
-                    <p class="card-text">total cost: {x.cost}</p>
+                  <div className="card-body">
+                    <h5 className="card-title">date: {x.date}</h5>
+                    <p className="card-text">note: {x.note}</p>
+                    <p className="card-text">adress: {x.address}</p>
+                    <p className="card-text">total cost: {x.cost}</p>
                   </div>
               </div>
             )

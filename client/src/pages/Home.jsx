@@ -86,7 +86,4 @@ const Home = () => {
   );
 }
 
-export default Home
-
-  // RETURN HERE
-
+export default Home;
