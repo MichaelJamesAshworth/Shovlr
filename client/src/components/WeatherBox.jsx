@@ -1,6 +1,6 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
-const weatherBox = () => {
+const WeatherBox = () => {
   const { data, isLoading, errorMessage } = useOpenWeather({
     key: 'YOUR-API-KEY',
     lat: '48.137154',
