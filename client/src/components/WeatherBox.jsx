@@ -12,7 +12,7 @@ const WeatherBox = () => {
     getInitialLocation();
   },[]);
 
-  const { data, isLoading, errorMessage } = useOpenWeather({
+  const { data, isLoading, errorMessage, city } = useOpenWeather({
     key: process.env.REACT_APP_OPENWEATHER_API_KEY,
     lat: location.lat,
     lon: location.lng,
@@ -22,12 +22,12 @@ const WeatherBox = () => {
   
   return (
     <ReactWeather
-      isLoading={isLoading}
+      isLoading={false}
       errorMessage={errorMessage}
       data={data}
       lang="en"
       //Note: the label here needs to be dynamic to match lat, lng
-      locationLabel="St. John's"
+      locationLabel={city}
       unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
       showForecast
     />
