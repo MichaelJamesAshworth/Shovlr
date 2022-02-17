@@ -43,4 +43,48 @@ html {
 
 :root{
   --primary-colour: "green"
+<<<<<<< HEAD
+=======
+}
+
+.search {
+  width:100vw;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.locate {
+  align-content: center;
+  margin-bottom: 1em;
+}
+
+.form {
+    text-align: left;
+    max-width: 500px;
+    padding: 1.5rem;
+    margin: auto;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.Account {
+  padding-top: 1em;
+}
+
+.PastRequests {
+  padding-top: 1em;
+}
+
+.card {
+  width: 80vw;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.PastRequests {
+  display: grid;
+  place-items: center;
+>>>>>>> feature/checkout
 }
