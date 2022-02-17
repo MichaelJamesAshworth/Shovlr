@@ -14,7 +14,7 @@ export default function RequestForm(props) {
     <>
       <form class='form'>
         <div class="mb-3">
-          <label for="inputEmail" class="form-label">Email address</label>
+          <label for="inputEmail" class="form-label">Email</label>
           <input readonly type="email" class="form-control" id="inputEmail" value="readonly email"></input>
         </div>
         <div class="mb-3">
