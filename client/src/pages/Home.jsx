@@ -10,9 +10,7 @@ const Home = () => {
         <div className="weather-box">
           <WeatherBox />
         </div>
-        <div className="map">
-          <Map />
-        </div>
+        <Map />
       </LocationProvider>
       <RequestRemovalButton />
     </div>
