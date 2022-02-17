@@ -7,10 +7,9 @@ const WeatherBox = () => {
   //context
   const { location, getInitialLocation } = useContext(locationContext);
 
-  //get location data
+  //get location data for user
   useEffect(() => {
     getInitialLocation();
-    console.log(location);
   },[]);
 
   const { data, isLoading, errorMessage } = useOpenWeather({

@@ -19,7 +19,7 @@ import {
 const Map = () => {
 
   //location context
-  const { location, setLocation, getInitialLocation } = useContext(locationContext);
+  const { location, setLocation } = useContext(locationContext);
 
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -30,6 +30,8 @@ const Map = () => {
   //const [location, setLocation] = useState();
 
   const onMapClick = React.useCallback((event) => {
+    console.log(event.latLng.lat());
+    console.log(event.latLng.lng());
     setLocation({
       lat: event.latLng.lat(),
       lng: event.latLng.lng()
@@ -59,7 +61,7 @@ const Map = () => {
     <div>
       <Search panTo={panTo} locationSelector={(location) => {
         setLocation(location)
-        setMarkers([{...location, time: new Date()}])
+        //setMarkers([{...location, time: new Date()}])
         }} />
 
       <GoogleMap
