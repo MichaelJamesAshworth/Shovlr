@@ -27,7 +27,7 @@ const WeatherBox = () => {
       data={data}
       lang="en"
       //Note: the label here needs to be dynamic to match lat, lng
-      locationLabel={city}
+      locationLabel={location.city}
       unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
       showForecast
     />

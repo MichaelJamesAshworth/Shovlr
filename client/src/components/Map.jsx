@@ -32,10 +32,35 @@ const Map = () => {
   const onMapClick = React.useCallback((event) => {
     console.log(event.latLng.lat());
     console.log(event.latLng.lng());
-    setLocation({
-      lat: event.latLng.lat(),
-      lng: event.latLng.lng()
-    });
+    
+    //Function to fetch city via reverse geocode
+    function reverseGeocode() {
+      const geocode = new window.google.maps.Geocoder();
+      const latlng = {
+        lat: parseFloat(event.latLng.lat()),
+        lng: parseFloat(event.latLng.lng()),
+      };
+      geocode
+        .geocode({ location: latlng })
+        .then((response) => {
+          console.log(response);
+          
+          if (response.results[0]) {
+            const length = response.results.length;
+            const city = response.results[length - 4].formatted_address;
+            console.log(city);
+
+            setLocation({
+              lat: event.latLng.lat(),
+              lng: event.latLng.lng(),
+              city 
+            });
+          }
+        })
+        .catch((e) => window.alert("Geocoder failed due to: " + e));
+    }
+    reverseGeocode();
+    
     // setMarkers(() => [, {
     //   lat: event.latLng.lat(),
     //   lng: event.latLng.lng(),
