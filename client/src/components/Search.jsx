@@ -51,7 +51,7 @@ return (
       onChange={(e) => setValue(e.target.value)} 
       disabled={!ready}
       placeholder={"Enter an address"}
-      style={{ width: 300, height: 20 }}
+      style={{ width: 330, height: 20 }}
     />
     <ComboboxPopover>
       <ComboboxList>

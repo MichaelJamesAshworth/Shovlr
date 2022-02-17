@@ -1,4 +1,9 @@
 .btn-success {
-  margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.weather-box {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-top: 1em;
 }

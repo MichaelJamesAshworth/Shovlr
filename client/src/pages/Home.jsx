@@ -7,8 +7,12 @@ const Home = () => {
   return (
     <div>
       <LocationProvider>
-        <WeatherBox />
-        <Map />
+        <div className="weather-box">
+          <WeatherBox />
+        </div>
+        <div className="map">
+          <Map />
+        </div>
       </LocationProvider>
       <RequestRemovalButton />
     </div>

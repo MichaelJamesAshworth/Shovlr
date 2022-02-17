@@ -1,7 +1,12 @@
+const { Autocomplete } = require("@react-google-maps/api");
+
 const libraries = ["places"];
 const mapContainerStyle = {
-  width: '100vw',
-  height: '50vh'
+  height: '50vh',
+  marginLeft: '1.5em',
+  marginRight: '1.5em',
+  marginTop: '1em',
+  marginBottom: '1em',
 };
 
 const center = {
