@@ -1,6 +1,7 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import { locationContext } from '../providers/LocationProvider';
 import { useContext, useEffect } from 'react';
+import './weatherbox.css'
 
 const WeatherBox = () => {
 
@@ -20,30 +21,10 @@ const WeatherBox = () => {
     lang: 'en',
     unit: 'metric', // values are (metric, standard, imperial)
   });
-  
-  const customStyles = {
-    fontFamily:  'Helvetica, sans-serif',
-    gradientStart:  '#0181C2',
-    gradientMid:  '#04A7F9',
-    gradientEnd:  '#4BC4F7',
-    locationFontColor:  '#FFF',
-    todayTempFontColor:  '#FFF',
-    todayDateFontColor:  '#B5DEF4',
-    todayRangeFontColor:  '#B5DEF4',
-    todayDescFontColor:  '#B5DEF4',
-    todayInfoFontColor:  '#B5DEF4',
-    todayIconColor:  '#FFF',
-    forecastBackgroundColor:  '#FFF',
-    forecastSeparatorColor:  '#DDD',
-    forecastDateColor:  '#777',
-    forecastDescColor:  '#777',
-    forecastRangeColor:  '#777',
-    forecastIconColor:  '#4BC4F7',
-  };
+
 
   return (
     <ReactWeather
-      theme={customStyles}
       isLoading={false}
       errorMessage={errorMessage}
       data={data}

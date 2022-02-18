@@ -24,6 +24,7 @@ const options = {
   mapTypeId: 'hybrid'
 };
 
+//Function to fetch city via reverse geocode
 function reverseGeocode(lat, long, setLocation) {
   const geocode = new window.google.maps.Geocoder();
   const latlng = {
