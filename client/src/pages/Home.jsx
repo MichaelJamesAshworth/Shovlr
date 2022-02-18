@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <LocationProvider>
-        <div id="weatherBoxContainer">
+        <div className="weather-box">
           <WeatherBox />
         </div>
         <Map />

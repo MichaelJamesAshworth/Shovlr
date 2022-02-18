@@ -4,6 +4,8 @@ import './styles/account.css'
 import './styles/pastRequests.css'
 import './styles/search.css'
 import './styles/home.css'
+import './styles/checkout.css'
+import './styles/nav.css'
 
 // Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';

@@ -2,10 +2,10 @@ import RequestForm from "../components/RequestForm";
 
 const Checkout = () => {
   return (
-    <>
-      <h1>checkout page</h1>
+    <div className="checkout">
+      <h1>checkout</h1>
       <RequestForm />
-    </>
+    </div>
 
   );
 }

@@ -16,7 +16,7 @@ const PastRequest = (props) => {
         })
       }
     }
-    return output;
+    return output.reverse();
   }
 
   const calculatePrice = (size) => {
@@ -28,6 +28,22 @@ const PastRequest = (props) => {
     return formatter.format(priceInCents/100);
   }
 
+  const formatDate = (data) => {
+    let date = new Date(data)
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let dt = date.getDate();
+
+    if (dt < 10) {
+      dt = '0' + dt;
+    }
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    return year + '-' + month + '-' + dt;
+  }
+
 
   return(
     <>
@@ -36,7 +52,7 @@ const PastRequest = (props) => {
             return (
               <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">date: {x.date}</h5>
+                    <h5 className="card-title">{formatDate(x.date)}</h5>
                     <p className="card-text">note: {x.note}</p>
                     <p className="card-text">adress: {x.address}</p>
                     <p className="card-text">total cost: {calculatePrice(x.cost)}</p>

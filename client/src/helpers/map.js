@@ -1,14 +1,14 @@
-// import { useContext } from "react";
-
-//context from 
-// import { locationContext } from '../providers/LocationProvider';
-
+const { Autocomplete } = require("@react-google-maps/api");
 
 const libraries = ["places"];
 
 const mapContainerStyle = {
-  width: '100vw',
-  height: '50vh'
+  height: '50vh',
+  marginLeft: '1em',
+  marginRight: '1em',
+  marginTop: '1em',
+  marginBottom: '1em',
+  borderRadius: '5px'
 };
 
 const center = {
