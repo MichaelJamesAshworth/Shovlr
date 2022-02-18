@@ -34,11 +34,8 @@ function App() {
       return (
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Note from client:</h5>
             <p className="card-text">{request.note}</p>
-            <h5 className="card-title">Address:</h5>
-            <p className="card-text">{request.address_id}</p>
-            <h5 className="card-title">Total cost:</h5>
+            <p className="card-text">Address: {request.address_id}</p>
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
             <button type="button" class="btn btn-success">Accept</button>
           </div>
