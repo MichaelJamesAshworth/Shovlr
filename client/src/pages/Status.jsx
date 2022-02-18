@@ -1,10 +1,10 @@
 const Status = () => {
   return (
     <div className="status">
-      <h1>Looking for a shoveler</h1>
+      <h1>Requesting a shoveler</h1>
       <img
         className="status-image"
-        src="images/Winter.png"
+        src="images/Winter.gif"
         alt="Loading"
       />
     </div>
