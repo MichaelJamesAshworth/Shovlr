@@ -6,6 +6,7 @@ import './styles/search.css'
 import './styles/home.css'
 import './styles/checkout.css'
 import './styles/nav.css'
+import './styles/status.css'
 
 // Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';
@@ -15,6 +16,7 @@ import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 // Import Pages
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
+import Status from './pages/Status';
 import Account from './pages/Account';
 import PastRequests from './pages/PastRequests';
 
@@ -36,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/Status" element={<Status />} />
           <Route path="/Account/*" element={<Account />} />
           <Route path="/Account/PastRequests" element={<PastRequests />} />
         </Routes>
