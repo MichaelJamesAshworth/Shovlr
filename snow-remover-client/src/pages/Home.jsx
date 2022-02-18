@@ -27,8 +27,19 @@ const Home = () => {
     return formatter.format(priceInCents/100);
   }
 
+  const markStarted = (id) => {
+    axios.put(`/api/removal_requests/started_at/${id}`)
+    .then(resp => {
+        console.log('marked started in db');
+    })
+    .catch(err => {
+        // Handle Error Here
+        console.error(err);
+    });
+  }
+
   const requestList = requests && requests.map(request => {
-    if (request.started_at === null) {
+    if (request.started_at === null && request.completed_at === null) {
       
       return (
         <div className="card">
@@ -38,7 +49,7 @@ const Home = () => {
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
             <Link to={{
                 pathname: '/ActiveRequest/' + request.id,
-              }} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button>
+              }} onClick={() => markStarted(request.id)} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button>
             </Link>
           </div>
         </div>
