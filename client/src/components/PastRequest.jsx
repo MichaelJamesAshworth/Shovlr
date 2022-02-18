@@ -16,7 +16,7 @@ const PastRequest = (props) => {
         })
       }
     }
-    return output;
+    return output.reverse();
   }
 
   const calculatePrice = (size) => {
@@ -52,7 +52,7 @@ const PastRequest = (props) => {
             return (
               <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">date: {formatDate(x.date)}</h5>
+                    <h5 className="card-title">{formatDate(x.date)}</h5>
                     <p className="card-text">note: {x.note}</p>
                     <p className="card-text">adress: {x.address}</p>
                     <p className="card-text">total cost: {calculatePrice(x.cost)}</p>
