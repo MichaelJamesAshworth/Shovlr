@@ -5,10 +5,10 @@
   height: 100%;
 }
 
-.status-image {
+/* .status-image {
   margin-right: 2rem;
-  animation: rotate 1s linear infinite;
-}
+  animation: rotate 3s linear infinite;
+} */
 
 .status h1 {
   margin-bottom: 1em;

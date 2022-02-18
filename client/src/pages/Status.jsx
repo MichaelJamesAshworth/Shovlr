@@ -4,7 +4,7 @@ const Status = () => {
       <h1>Looking for a shoveler</h1>
       <img
         className="status-image"
-        src="images/status.png"
+        src="images/Winter.png"
         alt="Loading"
       />
     </div>
