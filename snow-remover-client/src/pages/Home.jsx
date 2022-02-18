@@ -49,7 +49,7 @@ const Home = () => {
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
             <Link to={{
                 pathname: '/ActiveRequest/' + request.id,
-              }} onClick={() => markStarted(request.id)} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button>
+              }} onClick={() => markStarted(request.id)}><button type="button" class="btn btn-success">Accept</button>
             </Link>
           </div>
         </div>
