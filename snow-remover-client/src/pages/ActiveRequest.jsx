@@ -27,7 +27,13 @@ const ActiveRequest = () => {
   return (
     <div className='ActiveRequest'>
       <h1>This request is now active</h1>
-      <Link to="/" className='navbar-brand' onClick={markComplete}><button type="button" class="btn btn-success">Job completed</button></Link>
+      <img
+        className='snowflake'
+        src="../images/Winter.gif"
+        alt="Loading"
+      />
+      <br/>
+      <Link to="/" onClick={markComplete}><button type="button" class="btn btn-success complete-button">Complete</button></Link>
     </div>
   );
 }
