@@ -4,6 +4,7 @@ import ActiveRequest from './pages/ActiveRequest';
 import Nav from './components/Nav'
 import './styles/nav.css';
 import './styles/home.css';
+import './styles/activeRequest.css';
 
 function App() {
   return (
