@@ -1,7 +1,12 @@
 const Status = () => {
   return (
     <div className="status">
-      <h1>This is the status page</h1>
+      <h1>Looking for a shoveler</h1>
+      <img
+        className="status-image"
+        src="images/status.png"
+        alt="Loading"
+      />
     </div>
   );
 }

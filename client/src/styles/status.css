@@ -1,4 +1,15 @@
+@import "./animations.css";
+
 .status {
   padding-top: 1em;
   height: 100%;
+}
+
+.status-image {
+  margin-right: 2rem;
+  animation: rotate 1s linear infinite;
+}
+
+.status h1 {
+  margin-bottom: 1em;
 }
