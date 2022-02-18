@@ -29,13 +29,17 @@ const Home = () => {
 
   const requestList = requests && requests.map(request => {
     if (request.started_at === null) {
+      
       return (
         <div className="card">
           <div className="card-body">
             <p className="card-text">{request.note}</p>
             <p className="card-text">Address: {request.address_id}</p>
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
-            <Link to="/ActiveRequest" className='navbar-brand'><button type="button" class="btn btn-success">Accept</button></Link>
+            <Link to={{
+                pathname: '/ActiveRequest/' + request.id,
+              }} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button>
+            </Link>
           </div>
         </div>
       )

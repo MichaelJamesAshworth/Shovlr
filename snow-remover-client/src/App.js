@@ -13,7 +13,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ActiveRequest" element={<ActiveRequest />} />
+          <Route path="/ActiveRequest/*" element={<ActiveRequest />} />
         </Routes>
       </Router>
     </div>
