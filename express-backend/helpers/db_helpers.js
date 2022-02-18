@@ -124,6 +124,7 @@ module.exports = (db) => {
       .catch(err => err)
   }
 
+  //get completed requests
   const getCompletedRequestsByUserId = (userId) => {
 
     const query = {
@@ -136,10 +137,47 @@ module.exports = (db) => {
       .then(result => result.rows)
       .catch(err => err)
   }
-  
+
+  //get requests where started_at is null
+  const getUnstartedRequests = () => {
+
+    const query = {
+      text: 'SELECT * FROM removal_requests WHERE started_at IS NULL',
+    }
+
+    return db
+      .query(query)
+      .then(result => result.rows)
+      .catch(err => err)
+  }
+
+  //update started at time for request
+  const updateStartedAt = (requestId) => {
+    const query = {
+      text: 'UPDATE removal_requests SET started_at = NOW() WHERE id= $1;',
+      values: [requestId]
+    }
+    return db
+    .query(query)
+    .then(result => result.rows)
+    .catch(err => err)
+  }
+
+  //update started at time for request
+  const updateCompletedAt = (requestId) => {
+    const query = {
+      text: 'UPDATE removal_requests SET completed_at = NOW() WHERE id= $1;',
+      values: [requestId]
+    }
+
+    return db
+    .query(query)
+    .then(result => result.rows)
+    .catch(err => err)
+  }
+
 
   //get removal request by user id
-
   const getRequestByUserId = (userId) => {
 
     const query = {
@@ -152,6 +190,19 @@ module.exports = (db) => {
       .then(result => result.rows)
       .catch(err => err)
   }
+
+  //get request by request id
+  const getRequestById = (requestId) => {
+    const query = {
+      text: 'SELECT * FROM removal_requests WHERE id = $1',
+      values: [requestId]
+    }
+    return db
+      .query(query)
+      .then(result => result.rows)
+      .catch(err => err)
+  }
+  
 
   //takes in request object and adds to request table
   const addRequest = (request) => {
@@ -167,10 +218,6 @@ module.exports = (db) => {
       .catch(err => err)
   }
 
-
-
-
-
   return {
     getUsers,
     getSnowRemovers,
@@ -180,9 +227,12 @@ module.exports = (db) => {
     getAddressByUserId,
     getRequests,
     getCompletedRequestsByUserId,
+    getUnstartedRequests,
     getRequestByUserId,
+    getRequestById,
+    updateStartedAt,
+    updateCompletedAt,
     addRequest,
     addAddress
   }
-
 }
