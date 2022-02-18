@@ -10,7 +10,8 @@ export default function LocationProvider (props) {
   //location state lat, lng
   const [location, setLocation] = useState({
     lat: 0.00000,
-    lng: 0.00000
+    lng: 0.00000,
+    city: "St. John's"
   });
 
   //set location state based on user address
@@ -18,7 +19,7 @@ export default function LocationProvider (props) {
     const URL = 'http://localhost:3001/api/addresses/1'
     axios.get(URL)
       .then((response) => {
-        setLocation({lat: response.data[0].lat, lng: response.data[0].lng})
+        setLocation({lat: response.data[0].lat, lng: response.data[0].lng, city: "St. John's"})
       })
   }
 

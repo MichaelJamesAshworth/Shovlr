@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import Locate from './components/Locate';
 import Search from '../components/Search';
 import { locationContext } from '../providers/LocationProvider';
 
@@ -7,7 +6,8 @@ import {
   libraries, 
   mapContainerStyle, 
   center, 
-  options
+  options,
+  reverseGeocode
 } from '../helpers/map';
 
 import { 
@@ -20,6 +20,7 @@ const Map = () => {
 
   //location context
   const { location, setLocation } = useContext(locationContext);
+  console.log("Location--->:", location);
 
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -27,20 +28,10 @@ const Map = () => {
   });
 
   const [markers, setMarkers] = useState([]);
-  //const [location, setLocation] = useState();
 
   const onMapClick = React.useCallback((event) => {
-    console.log(event.latLng.lat());
-    console.log(event.latLng.lng());
-    setLocation({
-      lat: event.latLng.lat(),
-      lng: event.latLng.lng()
-    });
-    // setMarkers(() => [, {
-    //   lat: event.latLng.lat(),
-    //   lng: event.latLng.lng(),
-    //   time: new Date()
-    // }])
+    
+    reverseGeocode(event.latLng.lat(), event.latLng.lng(), setLocation)
   }, []);
   
   const mapRef = new React.useRef();
@@ -55,13 +46,12 @@ const Map = () => {
 
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading maps";
-  // console.log(location)
+  console.log("After code has been run:", location);
 
   return (
     <div>
       <Search panTo={panTo} locationSelector={(location) => {
-        setLocation(location)
-        //setMarkers([{...location, time: new Date()}])
+        reverseGeocode(location.lat, location.lng, setLocation);
         }} />
 
       <GoogleMap
