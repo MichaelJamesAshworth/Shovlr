@@ -40,12 +40,14 @@ function reverseGeocode(lat, long, setLocation) {
       if (response.results[0]) {
         const length = response.results.length;
         const city = response.results[length - 4].formatted_address;
+        const address = response.results[0].formatted_address;
         console.log(city);
 
         setLocation({
           lat,
           lng: long,
-          city 
+          city,
+          address 
         });
       }
     })

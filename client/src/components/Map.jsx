@@ -56,7 +56,7 @@ const Map = () => {
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle} 
-        zoom={9}
+        zoom={12}
         center={center}
         options={options}
         onClick={onMapClick}

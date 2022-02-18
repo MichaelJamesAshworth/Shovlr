@@ -1,7 +1,6 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import { locationContext } from '../providers/LocationProvider';
 import { useContext, useEffect } from 'react';
-import './weatherbox.css'
 
 const WeatherBox = () => {
 
@@ -23,7 +22,6 @@ const WeatherBox = () => {
 
   return (
     <ReactWeather
-      theme={customStyles}
       isLoading={false}
       errorMessage={errorMessage}
       data={data}
