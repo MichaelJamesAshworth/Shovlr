@@ -1,4 +1,11 @@
+// import { useContext } from "react";
+
+//context from 
+// import { locationContext } from '../providers/LocationProvider';
+
+
 const libraries = ["places"];
+
 const mapContainerStyle = {
   width: '100vw',
   height: '50vh'
@@ -17,9 +24,37 @@ const options = {
   mapTypeId: 'hybrid'
 };
 
+function reverseGeocode(lat, long, setLocation) {
+  const geocode = new window.google.maps.Geocoder();
+  const latlng = {
+    lat: parseFloat(lat),
+    lng: parseFloat(long),
+  };
+  console.log(lat, long);
+  geocode
+    .geocode({ location: latlng })
+    .then((response) => {
+      console.log(response);
+      
+      if (response.results[0]) {
+        const length = response.results.length;
+        const city = response.results[length - 4].formatted_address;
+        console.log(city);
+
+        setLocation({
+          lat,
+          lng: long,
+          city 
+        });
+      }
+    })
+    .catch((e) => window.alert("Geocoder failed due to: " + e));
+}
+
 module.exports = {
   libraries,
   mapContainerStyle,
   center,
-  options
+  options,
+  reverseGeocode
 }

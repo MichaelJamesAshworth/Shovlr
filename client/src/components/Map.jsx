@@ -7,7 +7,8 @@ import {
   libraries, 
   mapContainerStyle, 
   center, 
-  options
+  options,
+  reverseGeocode
 } from '../helpers/map';
 
 import { 
@@ -30,36 +31,14 @@ const Map = () => {
   //const [location, setLocation] = useState();
 
   const onMapClick = React.useCallback((event) => {
+    
+    reverseGeocode(event.latLng.lat(), event.latLng.lng(), setLocation)
     console.log(event.latLng.lat());
     console.log(event.latLng.lng());
+
     
     //Function to fetch city via reverse geocode
-    function reverseGeocode() {
-      const geocode = new window.google.maps.Geocoder();
-      const latlng = {
-        lat: parseFloat(event.latLng.lat()),
-        lng: parseFloat(event.latLng.lng()),
-      };
-      geocode
-        .geocode({ location: latlng })
-        .then((response) => {
-          console.log(response);
-          
-          if (response.results[0]) {
-            const length = response.results.length;
-            const city = response.results[length - 4].formatted_address;
-            console.log(city);
-
-            setLocation({
-              lat: event.latLng.lat(),
-              lng: event.latLng.lng(),
-              city 
-            });
-          }
-        })
-        .catch((e) => window.alert("Geocoder failed due to: " + e));
-    }
-    reverseGeocode();
+    
     
     // setMarkers(() => [, {
     //   lat: event.latLng.lat(),
@@ -85,7 +64,7 @@ const Map = () => {
   return (
     <div>
       <Search panTo={panTo} locationSelector={(location) => {
-        setLocation(location)
+        reverseGeocode(location.lat, location.lng, setLocation);
         //setMarkers([{...location, time: new Date()}])
         }} />
 
