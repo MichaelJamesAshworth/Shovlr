@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const totalPrice = 5000
 
-const CheckoutForm = (props) => {
 
+const CheckoutForm = (props) => {
+  
+  let navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -49,10 +51,12 @@ const CheckoutForm = (props) => {
       "user_id": props.request.user_id,
       "address": props.request.address
     }
+    
     //In order to transition to status page, useNavigate from react router documentation
-
-  )
-     console.log('Payment Successfull!')
+    
+    )
+    navigate("/Status");
+    console.log('Payment Successfull!')
    }
  }
 
