@@ -11,5 +11,5 @@ CREATE TABLE removal_requests(
   note TEXT,
   user_id INTEGER REFERENCES users(id) NOT NULL,
   snow_remover_id INTEGER REFERENCES snow_removers(id),
-  address_id INTEGER REFERENCES addresses(id)
+  address VARCHAR(255)
 );

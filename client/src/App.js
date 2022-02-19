@@ -19,6 +19,8 @@ import Checkout from './pages/Checkout';
 import Status from './pages/Status';
 import Account from './pages/Account';
 import PastRequests from './pages/PastRequests';
+import LocationProvider from "./providers/LocationProvider";
+
 
 // Import Components
 import Nav from './components/Nav';
@@ -32,18 +34,20 @@ const stripePromise = loadStripe(process.env.REACT_APP_PUBLISHABLE_KEY);
 
 function App() {
   return (
-    <div className='App'>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Checkout" element={<Checkout />} />
-          <Route path="/Status" element={<Status />} />
-          <Route path="/Account/*" element={<Account />} />
-          <Route path="/Account/PastRequests" element={<PastRequests />} />
-        </Routes>
-      </Router>
-    </div>
+    <LocationProvider>
+      <div className='App'>
+          <Router>
+            <Nav />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/Checkout" element={<Checkout />} />
+                <Route path="/Status" element={<Status />} />
+                <Route path="/Account/*" element={<Account />} />
+                <Route path="/Account/PastRequests" element={<PastRequests />} />
+              </Routes>
+          </Router>
+      </div>
+    </LocationProvider>
   );
 };
 
