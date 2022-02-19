@@ -4,14 +4,7 @@ import axios from 'axios';
 
 export default function RequestForm(props) {
 
-  const { location } = useContext(locationContext);
-  const [ request, setRequest ] = useState({
-    address: location.address,
-    user_id: 1,
-    size: 1,
-    price: 2000,
-    note: ""
-  });
+  
 
   useEffect(() => {
     getUserData(1);
@@ -20,19 +13,19 @@ export default function RequestForm(props) {
   const getUserData = (userId) => {
     axios.get(`http://localhost:3001/api/users/${userId}`)
     .then((response) => {
-      setRequest({...request, user_id: response.data[0].id, users_email: response.data[0].email})
+      props.setRequest({...props.request, user_id: response.data[0].id, users_email: response.data[0].email})
     });
   }
 
   const setSize = (e) => {
     const drivewaySize = Number(e.target.value);
     const priceInCents = drivewaySize * 2000;
-    setRequest({...request, size: drivewaySize, price: priceInCents})
+    props.setRequest({...props.request, size: drivewaySize, price: priceInCents})
     ;
   }
 
   const setNote = (e) => {
-    setRequest({...request, note: e.target.value});
+    props.setRequest({...props.request, note: e.target.value});
   }
 
   const getPrice = () => {
@@ -40,26 +33,15 @@ export default function RequestForm(props) {
       style: 'currency',
       currency: 'USD',
     });
-    const priceInCents = request.price;
+    const priceInCents = props.request.price;
     const formattedPrice = formatter.format(priceInCents/100);
     return formattedPrice
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted", request);
-    axios.post('http://localhost:3001/api/removal_requests', 
-      {
-        "users_email": request.users_email,
-        "total_cents": request.price,
-        "size": request.size,
-        "note": request.note,
-        "user_id": request.user_id,
-        "address": request.address
-      }
-    )
-      
-    
+    console.log("submitted", props.request);
+    props.setIsConfirmed(true)
   }
 
   return (
@@ -67,11 +49,11 @@ export default function RequestForm(props) {
       <form class='form'>
         <div class="mb-3">
           <label for="inputEmail" class="form-label">Email</label>
-          <input readOnly type="email" class="form-control" id="inputEmail" value={request.users_email || ''}></input>
+          <input readOnly type="email" class="form-control" id="inputEmail" value={props.request.users_email || ''}></input>
         </div>
         <div class="mb-3">
           <label for="inputAddress" class="form-label" >Address</label>
-          <input readOnly type="text" class="form-control" id="inputAddress" value={location.address || ''}></input>
+          <input readOnly type="text" class="form-control" id="inputAddress" value={props.location.address || ''}></input>
         </div>
         <div class="mb-3">
           <label for="inputSize" class="form-label">Size</label>
