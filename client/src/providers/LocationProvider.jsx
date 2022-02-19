@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { reverseGeocode } from '../helpers/map';
 const {createContext, useState} = require("react");
 
 
@@ -19,7 +20,8 @@ export default function LocationProvider (props) {
     const URL = 'http://localhost:3001/api/addresses/1'
     axios.get(URL)
       .then((response) => {
-        setLocation({lat: response.data[0].lat, lng: response.data[0].lng, city: "St. John's"})
+        const formattedCity =response.data[0].title.split(",")[1];
+        setLocation({lat: response.data[0].lat, lng: response.data[0].lng, city: formattedCity});
       })
   }
 
