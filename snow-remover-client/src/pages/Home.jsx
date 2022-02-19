@@ -28,7 +28,7 @@ const Home = () => {
     .then(result => {
       console.log(result.data);
       setRequests(result.data);
-      // setTimeout(getAllRequests, 1000);
+      setTimeout(getAllRequests, 1000);
     })
     .catch(error => {
       console.log('/api/removal/requests error')
