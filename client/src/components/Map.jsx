@@ -17,7 +17,6 @@ import {
 } from "@react-google-maps/api";
 
 const Map = () => {
-
   //location context
   const { location, setLocation } = useContext(locationContext);
   console.log("Location--->:", location);
