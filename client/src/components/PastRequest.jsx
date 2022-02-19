@@ -11,7 +11,7 @@ const PastRequest = (props) => {
         output.push({
           date: request.completed_at,
           note: request.note,
-          address: request.address_id,
+          address: request.address,
           cost: request.total_cents
         })
       }
@@ -54,7 +54,7 @@ const PastRequest = (props) => {
                   <div className="card-body">
                     <h5 className="card-title">{formatDate(x.date)}</h5>
                     <p className="card-text">note: {x.note}</p>
-                    <p className="card-text">adress: {x.address}</p>
+                    <p className="card-text">address: {x.address}</p>
                     <p className="card-text">total cost: {calculatePrice(x.cost)}</p>
                   </div>
               </div>

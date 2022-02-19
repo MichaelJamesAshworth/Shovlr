@@ -208,8 +208,8 @@ module.exports = (db) => {
   const addRequest = (request) => {
 
     const query = {
-      text: 'INSERT INTO removal_requests (created_at, started_at, completed_at, users_email, total_cents, size, note, user_id, snow_remover_id, address_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;',
-      values: [request.created_at, request.started_at, request.completed_at, request.users_email, request.total_cents, request.size, request.note, request.user_id, request.snow_remover_id, request.address_id]
+      text: 'INSERT INTO removal_requests (created_at, started_at, completed_at, users_email, total_cents, size, note, user_id, snow_remover_id, address) VALUES (NOW(), $1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;',
+      values: [null, null, request.users_email, request.total_cents, request.size, request.note, request.user_id, null, request.address]
     }
 
     return db
