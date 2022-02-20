@@ -46,7 +46,7 @@ export default function RequestForm(props) {
 
   return (
     <>
-      <form class='form'>
+      <form>
         <div class="mb-3">
           <label for="inputEmail" class="form-label">Email</label>
           <input readOnly type="email" class="form-control" id="inputEmail" value={props.request.users_email || ''}></input>

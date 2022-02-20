@@ -23,6 +23,8 @@ const Checkout = () => {
   return (
     <div className="checkout">
       <h1>checkout</h1>
+      <div className="form-container">
+
       <RequestForm 
       setIsConfirmed = {setIsConfirmed}
       request = {request}
@@ -36,6 +38,7 @@ const Checkout = () => {
           />
         </Elements>
       </div>}
+      </div>
 
     </div>
 
