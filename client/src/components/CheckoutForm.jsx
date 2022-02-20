@@ -2,6 +2,7 @@ import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import '../styles/stripe.css'
 
 
 const totalPrice = 5000
@@ -26,6 +27,25 @@ const CheckoutForm = (props) => {
           setClientSecret(data.clientSecret);  // <-- setting the client secret here
         });
   }, []);
+
+  const cardStyle = {
+    style: {
+      base: {
+        color: "#32325d",
+        fontFamily: 'Arial, sans-serif',
+        fontSmoothing: "antialiased",
+        fontSize: "16px",
+        "::placeholder": {
+          color: "#32325d"
+        }
+      },
+      invalid: {
+        fontFamily: 'Arial, sans-serif',
+        color: "#fa755a",
+        iconColor: "#fa755a"
+      }
+    }
+  };
 
   // STEP 2: make the payment/update DB after filling the form properly
   const makePayment = async (event) => {
@@ -67,8 +87,8 @@ const CheckoutForm = (props) => {
 };
 
   return (
-    <form id="payment-form" onSubmit={makePayment}>
-      <CardElement id="card-element" onChange={handleChange} />
+    <form id="payment-form" className='checkout-form' onSubmit={makePayment}>
+      <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button id="submit"> Pay Now </button>
     </form>
   );
