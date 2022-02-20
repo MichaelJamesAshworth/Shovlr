@@ -46,18 +46,18 @@ export default function RequestForm(props) {
 
   return (
     <>
-      <form class='form'>
-        <div class="mb-3">
-          <label for="inputEmail" class="form-label">Email</label>
-          <input readOnly type="email" class="form-control" id="inputEmail" value={props.request.users_email || ''}></input>
+      <form className='form'>
+        <div className="mb-3">
+          <label for="inputEmail" className="form-label">Email</label>
+          <input readOnly type="email" className="form-control" id="inputEmail" value={props.request.users_email || ''}></input>
         </div>
-        <div class="mb-3">
-          <label for="inputAddress" class="form-label" >Address</label>
-          <input readOnly type="text" class="form-control" id="inputAddress" value={props.location.address || ''}></input>
+        <div className="mb-3">
+          <label for="inputAddress" className="form-label" >Address</label>
+          <input readOnly type="text" className="form-control" id="inputAddress" value={props.location.address || ''}></input>
         </div>
-        <div class="mb-3">
-          <label for="inputSize" class="form-label">Size</label>
-          <select class="form-select" aria-label="Number of cars that fit in driveway" id="inputSize" onChange={setSize}>
+        <div className="mb-3">
+          <label for="inputSize" className="form-label">Size</label>
+          <select className="form-select" aria-label="Number of cars that fit in driveway" id="inputSize" onChange={setSize}>
             <option value="1" selected>1 car</option>
             <option value="2">2 cars</option>
             <option value="3">3 cars</option>
@@ -67,23 +67,23 @@ export default function RequestForm(props) {
             <option value="7">7 cars</option>
             <option value="8">8 cars</option>
           </select>
-          <div id="sizeHelp" class="form-text">Please select the approximate size if your driveway based on how many cars can be parked there.</div>
+          <div id="sizeHelp" className="form-text">Please select the approximate size if your driveway based on how many cars can be parked there.</div>
         </div>
-        <div class="mb-3">
-          <label for="inputNote" class="form-label">Note</label>
-          <textarea class="form-control rounded-0" id="inputText" rows="3" onChange={setNote}></textarea>
-          <div id="noteHelp" class="form-text">Leave a note for your shoveller.</div>
+        <div className="mb-3">
+          <label for="inputNote" className="form-label">Note</label>
+          <textarea className="form-control rounded-0" id="inputText" rows="3" onChange={setNote}></textarea>
+          <div id="noteHelp" className="form-text">Leave a note for your shoveller.</div>
         </div>
-        <div class="mb-3 row">
-          <div class="col-auto">
-            <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+        <div className="mb-3 row">
+          <div className="col-auto">
+            <label for="inputPrice" className="col-sm-2 col-form-label">Price</label>
           </div>
-          <div class="col-auto">
-            <input readOnly type="text" class="form-control-plaintext" id="inputPrice" value={getPrice()}></input>
+          <div className="col-auto">
+            <input readOnly type="text" className="form-control-plaintext" id="inputPrice" value={getPrice()}></input>
           </div>
           
         </div>
-        <button type="submit" onClick={handleSubmit} class="btn btn-primary">Confirm</button>
+        <button type="submit" onClick={handleSubmit} className="btn btn-primary">Confirm</button>
       </form>
     </>
   );
