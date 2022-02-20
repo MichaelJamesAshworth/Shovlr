@@ -56,10 +56,10 @@ body {
   margin-bottom: 1em;
 }
 
-.form {
+.form-container {
     text-align: left;
     max-width: 500px;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     margin: auto;
     border-width: 1px;
     border-top-left-radius: 0.25rem;
