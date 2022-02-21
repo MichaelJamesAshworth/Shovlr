@@ -17,11 +17,9 @@ const center = {
 };
 
 const options = {
-  // styles: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
   tilt: 0,
-  mapTypeId: 'hybrid'
 };
 
 //Function to fetch city via reverse geocode

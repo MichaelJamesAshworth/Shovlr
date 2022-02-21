@@ -20,7 +20,7 @@ export default function Nav(props) {
   }
 
   return (
-    <nav className="navbar fixed-top navbar-dark bg-primary">
+    <nav id="navbar" className="navbar fixed-top navbar-dark bg-primary">
       <div className="container-fluid">
           <Link to="/" className='navbar-brand'>Shovlr</Link>
           {renderNavButton()}
