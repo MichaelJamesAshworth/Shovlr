@@ -115,7 +115,7 @@ module.exports = (db) => {
   const getRequests = () => {
 
     const query = {
-      text: 'SELECT * FROM removal_requests'
+      text: 'SELECT * FROM removal_requests ORDER BY id'
     }
 
     return db

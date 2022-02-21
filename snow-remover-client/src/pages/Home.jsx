@@ -51,7 +51,7 @@ const Home = () => {
         <div className="card">
           <div className="card-body">
             <p className="card-text">{request.note}</p>
-            <p className="card-text">Address: {request.address}</p>
+            <p className="card-text">{request.address}</p>
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
             <Link to={{
                 pathname: '/ActiveRequest/' + request.id,

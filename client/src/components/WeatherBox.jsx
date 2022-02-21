@@ -14,12 +14,16 @@ const WeatherBox = () => {
 
   const { data, isLoading, errorMessage, city } = useOpenWeather({
     key: process.env.REACT_APP_OPENWEATHER_API_KEY,
-    lat: location.lat,
-    lon: location.lng,
+    lat: location?.lat || 0,
+    lon: location?.lng || 0,
     lang: 'en',
     unit: 'metric', // values are (metric, standard, imperial)
   });
 
+  if (!location) {
+    return null
+  }
+  
   return (
     <ReactWeather
       isLoading={false}
