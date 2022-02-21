@@ -4,19 +4,25 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [requests, setRequests] = useState([]);
+  
   useEffect(() => {
+    getRequests();
+  }, [])
+
+  const getRequests = () =>  {
     axios({
       method: 'GET',
       url: '/api/removal_requests'
     })
     .then(result => {
+      setTimeout(() => {getRequests()}, 1000);
       console.log(result.data)
       setRequests(result.data)
     })
     .catch(error => {
       console.log('/api/removal/requests error')
     })
-  }, [])
+  };
 
   const calculatePrice = (size) => {
     var formatter = new Intl.NumberFormat('en-US', {
@@ -45,7 +51,7 @@ const Home = () => {
         <div className="card">
           <div className="card-body">
             <p className="card-text">{request.note}</p>
-            <p className="card-text">Address: {request.address_id}</p>
+            <p className="card-text">Address: {request.address}</p>
             <p className="card-text">{calculatePrice(request.total_cents)}</p>
             <Link to={{
                 pathname: '/ActiveRequest/' + request.id,
