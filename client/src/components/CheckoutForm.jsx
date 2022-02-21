@@ -75,8 +75,8 @@ const CheckoutForm = (props) => {
     //In order to transition to status page, useNavigate from react router documentation
     
     )
+    alert ('Your payment has successfully been processed!')
     navigate("/Status");
-    console.log('Payment Successfull!')
    }
  }
 

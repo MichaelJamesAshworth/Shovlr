@@ -53,7 +53,7 @@ return (
       placeholder={"Enter an address"}
       style={{ 
         height: 30,
-        width: '88vw'
+        width: '95vw'
       }}
     />
     <ComboboxPopover>
