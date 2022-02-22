@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 import MyVerticallyCenteredModal from '../components/Modal'
 import '../styles/stripe.css'
 
-
 const totalPrice = 5000
-
 
 const CheckoutForm = (props) => {
   let navigate = useNavigate();
@@ -25,7 +23,7 @@ const CheckoutForm = (props) => {
       })
         .then(res => res.json())
         .then((data) => {
-          setClientSecret(data.clientSecret);  // <-- setting the client secret here
+          setClientSecret(data.clientSecret); 
         });
   }, []);
 
@@ -48,7 +46,6 @@ const CheckoutForm = (props) => {
     }
   };
 
-  // STEP 2: make the payment/update DB after filling the form properly
   const makePayment = async (event) => {
     event.preventDefault();
     const payload = await stripe.confirmCardPayment(clientSecret, {
@@ -71,18 +68,11 @@ const CheckoutForm = (props) => {
       "note": props.request.note,
       "user_id": props.request.user_id,
       "address": props.request.address
-    }
-    //In order to transition to status page, useNavigate from react router documentation
-    
-    )
+    })
     setModalShow(true) 
-    // !open && navigate("/Status") 
-    // navigate("/Status");
    }
  }
 
- // Listen for changes in the CardElement
- // and display any errors as the customer types their card details
  const handleChange = async (event) => {
   console.log(event);
 };
