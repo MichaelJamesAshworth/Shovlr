@@ -78,10 +78,11 @@ const Status = () => {
           {renderStatusPage()}
         </div>
         <ul className="list-group list-group-flush">
-          {request && <li className="list-group-item"><FontAwesomeIcon icon={faLocationDot} /> {request.address}</li>}
-          {request && <li className="list-group-item"><FontAwesomeIcon icon={faCreditCard} /> payment successful</li>}
-          {request && <li className="list-group-item"><FontAwesomeIcon icon={faEnvelope} /> {request.users_email}</li>}
-          {request && request.note.length > 0 && <li className="list-group-item"><FontAwesomeIcon icon={faComment} /> {request.note}</li>}
+          
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} /></div> <div className="p-2">{request.address}</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} /></div> <div className="p-2">payment successful</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faEnvelope} /></div> <div className="p-2">{request.users_email}</div></li>}
+          {request && request.note.length > 0 && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} /></div> <div className="p-2">{request.note}</div></li>}
         </ul>
       </div>
       {request && request.completed_at != null && <Link to="/"><button type="button" class="btn btn-success">return to home</button></Link>}
