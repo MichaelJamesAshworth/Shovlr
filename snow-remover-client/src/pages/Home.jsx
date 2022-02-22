@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faCreditCard, faCarSide, faComment } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [requests, setRequests] = useState([]);
@@ -49,15 +51,13 @@ const Home = () => {
       
       return (
         <div className="card">
-          <div className="card-body">
-            <p className="card-text">{request.note}</p>
-            <p className="card-text">{request.address}</p>
-            <p className="card-text">{calculatePrice(request.total_cents)}</p>
-            <Link to={{
-                pathname: '/ActiveRequest/' + request.id,
-              }} onClick={() => markStarted(request.id)} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button>
-            </Link>
-          </div>
+          <ul className="list-group list-group-flush">
+            {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} /></div> <div className="p-2">{request.address}</div></li>}
+            {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCarSide} /></div> <div className="p-2">{request.size}</div></li>}
+            {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} /></div> <div className="p-2">{calculatePrice(request.total_cents)}</div></li>}
+            {request && request.note.length > 0 && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} /></div> <div className="p-2">{request.note}</div></li>}
+            {request && <li className="list-group-item"><Link to={{pathname: '/ActiveRequest/' + request.id,}} onClick={() => markStarted(request.id)} className='navbar-brand'><button type="button" class="btn btn-success">Accept</button></Link></li>}
+          </ul>
         </div>
       )
     }
