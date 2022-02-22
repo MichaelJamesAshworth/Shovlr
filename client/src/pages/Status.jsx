@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faCreditCard, faEnvelope, faComment } from "@fortawesome/free-solid-svg-icons";
 
 const Status = () => {
   const [request, setRequest] = useState(null);
@@ -28,7 +30,7 @@ const Status = () => {
 
   const created = (
     <>
-      <h1>finding shoveler</h1>
+      <h1>Connecting you with a snow remover</h1>
       <img
       className="status-image"
       src="images/Winter.gif"
@@ -38,7 +40,8 @@ const Status = () => {
   );
   const started = (
     <>
-      <h1>Your request in progress</h1>
+      <h1>A snow remover has accepted your request</h1>
+      <p>Your request is now in progress</p>
       <img
       className="status-image"
       src="images/Winter.gif"
@@ -48,9 +51,8 @@ const Status = () => {
   );
   const complete = (
     <>
-      <h1>Your request has been complete</h1>
-      <h4>Thank you for your business!</h4>
-      <Link to="/">return to home</Link>
+      <h1>Your request has been completed</h1>
+      <p>Thank you for your business!</p>
     </>
     );
   
@@ -64,11 +66,25 @@ const Status = () => {
     }
   }
 
+  useEffect(() => {
+    console.log(request)
+  }, [request])
+
   
   return (
     <div className="status">
-      {renderStatusPage()}
-
+      <div className="card">
+        <div className="card-body">
+          {renderStatusPage()}
+        </div>
+        <ul className="list-group list-group-flush">
+          {request && <li className="list-group-item"><FontAwesomeIcon icon={faLocationDot} /> {request.address}</li>}
+          {request && <li className="list-group-item"><FontAwesomeIcon icon={faCreditCard} /> payment successful</li>}
+          {request && <li className="list-group-item"><FontAwesomeIcon icon={faEnvelope} /> {request.users_email}</li>}
+          {request && request.note.length > 0 && <li className="list-group-item"><FontAwesomeIcon icon={faComment} /> {request.note}</li>}
+        </ul>
+      </div>
+      {request && request.completed_at != null && <Link to="/"><button type="button" class="btn btn-success">return to home</button></Link>}
     </div>
   );
 }
