@@ -1,7 +1,7 @@
 @import "./animations.css";
 
 .status {
-  padding-top: 1em;
+  margin: 1em;
   height: 100%;
 }
 
@@ -10,6 +10,22 @@
   animation: rotate 3s linear infinite;
 } */
 
-.status h1 {
-  margin-bottom: 1em;
+.status img {
+  margin-top: 1em;
+}
+
+.status button {
+  margin-top: 1em;
+}
+
+.status .card {
+  margin: auto;
+}
+
+.status li {
+  text-align: left;
+}
+
+.status #home-button {
+  text-align: center; 
 }

@@ -4,7 +4,7 @@
   place-items: center;
 }
 
-.card {
+.PastRequests .card {
   width: 88vw;
   margin-bottom: 1em;
   margin-top: 1em;

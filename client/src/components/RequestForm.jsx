@@ -83,7 +83,6 @@ export default function RequestForm(props) {
           </div>
           
         </div>
-        <button type="submit" onClick={handleSubmit} className="btn btn-primary">Confirm</button>
       </form>
     </>
   );
