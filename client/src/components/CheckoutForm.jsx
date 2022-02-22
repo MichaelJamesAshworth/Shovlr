@@ -2,7 +2,7 @@ import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import Modal from '../components/Modal'
+import MyVerticallyCenteredModal from '../components/Modal'
 import '../styles/stripe.css'
 
 
@@ -11,7 +11,7 @@ const totalPrice = 5000
 
 const CheckoutForm = (props) => {
   let navigate = useNavigate();
-  const [open, setIsOpen] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -75,7 +75,7 @@ const CheckoutForm = (props) => {
     //In order to transition to status page, useNavigate from react router documentation
     
     )
-    setIsOpen(true) 
+    setModalShow(true) 
     // !open && navigate("/Status") 
     // navigate("/Status");
    }
@@ -91,7 +91,10 @@ const CheckoutForm = (props) => {
     <form id="payment-form" className='checkout-form' onSubmit={makePayment}>
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button id="submit"> Pay Now </button>
-      <Modal open={open} setIsOpen={setIsOpen}> <div>You're payment was successfull!</div></Modal>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </form>
   );
 };
