@@ -31,13 +31,13 @@ const Checkout = () => {
       setRequest = {setRequest} 
       location = {location}
       />
-      { isConfirmed && <div>
+       <div>
         <Elements stripe={promise}>
           <CheckoutForm 
           request = {request}
           />
         </Elements>
-      </div>}
+      </div>
       </div>
 
     </div>

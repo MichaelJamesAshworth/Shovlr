@@ -2,6 +2,7 @@ import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Modal from '../components/Modal'
 import '../styles/stripe.css'
 
 
@@ -9,8 +10,8 @@ const totalPrice = 5000
 
 
 const CheckoutForm = (props) => {
-  
   let navigate = useNavigate();
+  const [open, setIsOpen] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -71,12 +72,12 @@ const CheckoutForm = (props) => {
       "user_id": props.request.user_id,
       "address": props.request.address
     }
-    
     //In order to transition to status page, useNavigate from react router documentation
     
     )
-    navigate("/Status");
-    console.log('Payment Successfull!')
+    setIsOpen(true) 
+    // !open && navigate("/Status") 
+    // navigate("/Status");
    }
  }
 
@@ -90,6 +91,7 @@ const CheckoutForm = (props) => {
     <form id="payment-form" className='checkout-form' onSubmit={makePayment}>
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button id="submit"> Pay Now </button>
+      <Modal open={open} setIsOpen={setIsOpen}> <div>You're payment was successfull!</div></Modal>
     </form>
   );
 };
