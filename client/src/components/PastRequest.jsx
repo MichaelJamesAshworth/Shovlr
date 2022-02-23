@@ -54,7 +54,7 @@ const PastRequest = (props) => {
           requests && requestHtml().map((x) => {
             return (
               <div className="card">
-                <div className="card-body">
+                <div className="card-header">
                 {formatDate(x.date)}
                 </div>
                 <ul className="list-group list-group-flush">
