@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faCreditCard, faEnvelope, faComment } from "@fortawesome/free-solid-svg-icons";
+
 const PastRequest = (props) => {
   const requests = props.requests;
   
@@ -51,12 +54,15 @@ const PastRequest = (props) => {
           requests && requestHtml().map((x) => {
             return (
               <div className="card">
-                  <div className="card-body">
-                    <h5 className="card-title">{formatDate(x.date)}</h5>
-                    <p className="card-text">note: {x.note}</p>
-                    <p className="card-text">address: {x.address}</p>
-                    <p className="card-text">total cost: {calculatePrice(x.cost)}</p>
-                  </div>
+                <div className="card-body">
+                {formatDate(x.date)}
+                </div>
+                <ul className="list-group list-group-flush">
+                  
+                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} /></div> <div className="p-2">{x.address}</div></li>}
+                  {x.note && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} /></div> <div className="p-2">{x.note}</div></li>}
+                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} /></div> <div className="p-2">{calculatePrice(x.cost)}</div></li>}
+                </ul>
               </div>
             )
           })
