@@ -4,7 +4,7 @@ const RequestRemovalButton = () => {
 
   return (
     <Link to='Checkout' className='requestButton'>
-      <button type="button" className="btn">Requst snow removal</button>
+      <button type="button" className="btn">Request snow removal</button>
     </Link>
   );
 }
