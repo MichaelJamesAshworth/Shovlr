@@ -6,6 +6,7 @@ import './styles/home.css'
 import './styles/checkout.css'
 import './styles/nav.css'
 import './styles/status.css'
+import './styles/newTheme.css'
 
 // Stripe related imports
 import {Elements} from '@stripe/react-stripe-js';

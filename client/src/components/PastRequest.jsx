@@ -59,9 +59,9 @@ const PastRequest = (props) => {
                 </div>
                 <ul className="list-group list-group-flush">
                   
-                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} /></div> <div className="p-2">{x.address}</div></li>}
-                  {x.note && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} /></div> <div className="p-2">{x.note}</div></li>}
-                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} /></div> <div className="p-2">{calculatePrice(x.cost)}</div></li>}
+                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} color="#2b6777" /></div> <div className="p-2">{x.address}</div></li>}
+                  {x.note && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} color="#2b6777" /></div> <div className="p-2">{x.note}</div></li>}
+                  {<li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} color="#2b6777" /></div> <div className="p-2">{calculatePrice(x.cost)}</div></li>}
                 </ul>
               </div>
             )

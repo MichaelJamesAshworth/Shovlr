@@ -48,10 +48,10 @@ const Account = () => {
                   </div>
                   <div className="d-flex justify-content-center my-4">
                     <Link to='../Status'>
-                      <button type="button" className="btn btn-primary">Active Request</button>
+                      <button type="button" className="btn">Active Request</button>
                     </Link>
                     <Link to='PastRequests'>
-                      <button type="button" className="btn btn-outline-primary ms-1">Request History</button>
+                      <button type="button" className="btn ms-1">Request History</button>
                     </Link>
                   </div>
                 </div>

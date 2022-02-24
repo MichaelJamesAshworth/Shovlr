@@ -4,6 +4,26 @@ import { useContext, useEffect } from 'react';
 
 const WeatherBox = () => {
 
+  const customStyles = {
+    fontFamily:  'Helvetica, sans-serif',
+    gradientStart:  '#58ab98',
+    gradientMid:  '#2b6777',
+    gradientEnd:  '#2b6777',
+    locationFontColor:  '#FFF',
+    todayTempFontColor:  '#FFF',
+    todayDateFontColor:  '#ffffff',
+    todayRangeFontColor:  '#ffffff',
+    todayDescFontColor:  '#ffffff',
+    todayInfoFontColor:  '#ffffff',
+    todayIconColor:  '#FFF',
+    forecastBackgroundColor:  '#FFF',
+    forecastSeparatorColor:  '#DDD',
+    forecastDateColor:  '#777',
+    forecastDescColor:  '#777',
+    forecastRangeColor:  '#777',
+    forecastIconColor:  '#4BC4F7',
+};
+
   //context
   const { location, getInitialLocation } = useContext(locationContext);
 
@@ -26,6 +46,7 @@ const WeatherBox = () => {
   
   return (
     <ReactWeather
+      theme={customStyles}
       isLoading={false}
       errorMessage={errorMessage}
       data={data}

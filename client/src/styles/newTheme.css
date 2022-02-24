@@ -1,0 +1,38 @@
+/* NAVBAR */
+#navbar {
+  background-color: #2b6777;
+ }
+
+ /* BACKGROUND COLOR */
+ body {
+   background-color: #ffffff;
+ }
+
+ /* BUTTONS */
+ .btn {
+  background-color: #52ab98;
+  border-color: #52ab98;
+  color: #ffffff;
+ }
+
+ .requestButton {
+   margin-top: 2em;
+ }
+
+ /* CARDS */
+ .card-header {
+   background-color: #c8d8e4;
+ }
+
+ .card {
+   border-color: #2b6777;
+ }
+
+ .list-group-item {
+  border-color: #2b6777;
+ }
+
+ /* TEXT */
+ h1, p {
+   color: #2b6777;
+ }

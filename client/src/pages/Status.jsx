@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot, faCreditCard, faEnvelope, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faCreditCard, faEnvelope, faComment, faCarSide } from "@fortawesome/free-solid-svg-icons";
 
 const Status = () => {
   const [request, setRequest] = useState(null);
@@ -28,12 +28,21 @@ const Status = () => {
   //   console.log(request);
   // }, [request]);
 
+  const calculatePrice = (size) => {
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    const priceInCents = size;
+    return formatter.format(priceInCents/100);
+  }
+
   const created = (
     <>
       <h1>Connecting you with a snow remover</h1>
       <img
       className="status-image"
-      src="images/Winter.gif"
+      src="images/Walk.gif"
       alt="Loading"
       />
     </>
@@ -44,7 +53,7 @@ const Status = () => {
       <p>Your request is now in progress</p>
       <img
       className="status-image"
-      src="images/Winter.gif"
+      src="images/Walk.gif"
       alt="Loading"
       />
     </>
@@ -74,15 +83,16 @@ const Status = () => {
   return (
     <div className="status">
       <div className="card">
-        <div className="card-body">
+        <div className="card-header">
           {renderStatusPage()}
         </div>
         <ul className="list-group list-group-flush">
           
-          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} /></div> <div className="p-2">{request.address}</div></li>}
-          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} /></div> <div className="p-2">payment successful</div></li>}
-          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faEnvelope} /></div> <div className="p-2">{request.users_email}</div></li>}
-          {request && request.note.length > 0 && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} /></div> <div className="p-2">{request.note}</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faLocationDot} color="#2b6777" /></div> <div className="p-2">{request.address}</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faEnvelope} color="#2b6777" /></div> <div className="p-2">{request.users_email}</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCarSide} color="#2b6777" /></div> <div className="p-2">{request.size}</div></li>}
+          {request && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faCreditCard} color="#2b6777" /></div> <div className="p-2">{calculatePrice(request.total_cents)}</div></li>}
+          {request && request.note.length > 0 && <li className="list-group-item d-flex"><div className="p-2"><FontAwesomeIcon icon={faComment} color="#2b6777" /></div> <div className="p-2">{request.note}</div></li>}
         </ul>
       </div>
       {request && request.completed_at != null && <Link to="/"><button type="button" class="btn btn-success">return to home</button></Link>}

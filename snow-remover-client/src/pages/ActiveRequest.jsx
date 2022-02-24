@@ -29,11 +29,11 @@ const ActiveRequest = () => {
       <h1>This request is now active</h1>
       <img
         className='snowflake'
-        src="../images/Winter.gif"
+        src="../images/Walk.gif"
         alt="Loading"
       />
       <br/>
-      <Link to="/" onClick={markComplete}><button type="button" class="btn btn-success complete-button">Complete</button></Link>
+      <Link to="/" onClick={markComplete}><button type="button" className="btn">Complete</button></Link>
     </div>
   );
 }

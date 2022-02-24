@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import './styles/nav.css';
 import './styles/home.css';
 import './styles/activeRequest.css';
+import './styles/newTheme.css';
 
 function App() {
   return (
